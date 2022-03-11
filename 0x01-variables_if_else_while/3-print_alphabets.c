@@ -12,15 +12,13 @@ int main(void)
 	char c;
 	char d;
 
-	c = 'a';
-	d = 'A';
 
-	while (c <= 'z')
+	for (c = 'a'; c <= 'z'; c++)
 	{
 		putchar(c);
 	}
 
-	while (d <= 'Z')
+	for (d = 'A'; d <= 'Z'; d++)
 	{
 		putchar(d);
 	}
