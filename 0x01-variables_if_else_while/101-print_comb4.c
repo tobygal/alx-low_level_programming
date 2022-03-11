@@ -12,8 +12,8 @@ int main(void)
 	int j;
 	int k;
 
-	i = 48;
 	k = 48;
+	i = 48;
 	j = 48;
 
 	while (i < 58)
@@ -29,7 +29,7 @@ int main(void)
 					putchar(i);
 					putchar(k);
 					putchar(j);
-					if (i == 55 && k == 56 && j == 57)
+					if (k == 56 && i == 55 && j == 57)
 					{
 						break;
 					}
