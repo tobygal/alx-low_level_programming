@@ -27,8 +27,8 @@ int main(void)
 				if (i != k && i != j && k != j && i < j && j < k)
 				{
 					putchar(i);
-					putchar(k);
 					putchar(j);
+					putchar(k);
 					if (k == 56 && i == 55 && j == 57)
 					{
 						break;
