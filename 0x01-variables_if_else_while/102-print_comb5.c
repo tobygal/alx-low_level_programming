@@ -8,41 +8,28 @@
 
 int main(void)
 {
-	int j, k, m, i, op1, op2;
+	int num1;
+	int num2;
 
-	j = k = m = i = 48;
-	while (i < 58)
+	for (num1 = 0; num1 < 100; num1++)
 	{
-		m = 48;
-		while (m < 58)
+		for (num2 = 0; num2 < 100; num2++)
 		{
-			k = 48;
-			while (k < 58)
+			if (num1 < num2)
 			{
-				j = 48;
-				while (j < 58)
+				putchar((num1 / 10) + '0');
+				putchar((num1 % 10) + '0');
+				putchar(' ');
+				putchar((num2 / 10) + '0');
+				putchar((num2 % 10) + '0');
+				if (num1 == 98 && num2 == 99)
 				{
-					op1 = (i * 10) + m;
-					op2 = (k * 10) + j;
-					if (op1 < op2)
-					{
-						putchar(i);
-						putchar(m);
-						putchar(' ');
-						putchar(k);
-						putchar(j);
-						if (i == 57 && m == 56 && k == 57 && j == 57)
-							break;
-						putchar(',');
-						putchar(' ');
-					}
-					j++;
+					break;
 				}
-				k++;
+				putchar(',');
+				putchar(' ');
 			}
-			m++;
 		}
-		i++;
 	}
 	putchar('\n');
 	return (0);
