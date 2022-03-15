@@ -4,7 +4,8 @@
  * _islower - Determine if an alphabet is lowercase or upper case
  *
  * Return: return 1 if lowercase, returns 0 otherwise
- * c - is an integer type
+ *
+ * @c: is an integer type
  */
 int _islower(int c)
 {
@@ -14,7 +15,7 @@ int _islower(int c)
 	{
 		return (1);
 	}
-	else
+	else if (c <= 90)
 	{
 		return (0);
 	}
