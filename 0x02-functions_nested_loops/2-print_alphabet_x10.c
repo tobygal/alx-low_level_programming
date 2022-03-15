@@ -4,7 +4,7 @@
  * print_alphabet_x10 - prints 10 times the alphabet in lower case
  */
 
-void print_alphabet_x10(void);
+void print_alphabet_x10(void)
 {
 	int alp;
 	int br;
