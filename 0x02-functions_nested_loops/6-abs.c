@@ -4,10 +4,10 @@
  * _abs - Absolute values of numbers
  *
  * Return: the absolute value
- * @int: a number
+ * @v: a number
  */
 
-int _abs(int)
+int _abs(int v)
 {
 	return (v * ((v > 0) - (v < 0)));
 }
