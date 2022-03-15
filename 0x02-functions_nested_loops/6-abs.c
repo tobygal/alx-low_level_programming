@@ -7,8 +7,7 @@
  * @int: a number
  */
 
-
-int _abs(int);
+int _abs(int)
 {
 	return (v * ((v > 0) - (v < 0)));
 }
