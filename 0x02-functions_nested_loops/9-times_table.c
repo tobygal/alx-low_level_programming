@@ -31,8 +31,8 @@ void times_table(void)
 				if (a != 0)
 				{
 					_putchar(' ');
+					_putchar(c + '0');
 				}
-				_putchar(c + '0');
 			}
 			if (b == 9)
 			{
