@@ -29,3 +29,16 @@ void times_table(void)
 			else
 			{
 				_putchar(c + '0');
+			}
+			if (b == 9)
+			{
+				break;
+			}
+			putchar(',');
+			putchar(' ');
+			b++;
+		}
+		putchar('\n');
+		a++;
+	}
+}
