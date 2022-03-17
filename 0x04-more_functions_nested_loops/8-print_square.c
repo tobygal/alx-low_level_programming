@@ -12,10 +12,10 @@ void print_square(int size)
 
 	if (size > 0)
 	{
-		z = 0;
-		while (size > z)
+		z = 1;
+		while (size >= z)
 		{
-			for (q = 0; q < size; q++)
+			for (q = 1; q <= size; q++)
 			{
 				_putchar('#');
 			}
@@ -23,5 +23,8 @@ void print_square(int size)
 			z++;
 		}
 	}
-	_putchar('\n');
+	else
+	{
+		_putchar('\n');
+	}
 }
