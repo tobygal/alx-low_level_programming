@@ -16,7 +16,7 @@ int main(void)
 		{
 			a = a / i;
 		}
-		printf("%ul\n", a);
-		return (0);
+		printf("%lu\n", a);
 	}
+	return (0);
 }
