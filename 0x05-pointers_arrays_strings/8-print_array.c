@@ -15,9 +15,10 @@ void print_array(int *a, int n)
 	for (j = 0; j < n; j++)
 	{
 		printf("%d", a[j]);
-		if (i < (n - 1))
+		if (j < (n - 1))
 		{
 			printf(",");
 		}
 		printf("\n");
+	}
 }
