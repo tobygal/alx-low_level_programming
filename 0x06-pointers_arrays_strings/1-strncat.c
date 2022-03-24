@@ -1,37 +1,33 @@
 #include "main.h"
 
 /**
- * _strncat - Function to concatenate string to the nth byte
- * @dest: The starting string
- * @src: The appending string
- * @n: number to be added
- * Return: Always return dest
+ * _strncat - two words
+ * @dest : pointer to char param
+ * @src : pointer to char param
+ * @n : int parameter
+ * Return: *dest
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int a;
-	int b;
-	int z;
+	int m;
+	int i;
 
-	a = 0;
-	b = 0;
+	m = 0;
 
-	while (dest[a] != '\0')
+	for (i = 0; i < 1000; i++)
 	{
-		a++;
-	}
-
-	while (src[b] != '\0')
-	{
-		if (b <= n)
+		if (dest[i] == '\0')
 		{
-			dest[a] = src[b];
-			b++;
-			a++;
+			break;
 		}
-		dest[a] = '\0';
-		return (dest);
+		m++;
 	}
 
+	for (i = 0; src[i] != '\0' && i < n; i++)
+	{
+		dest[m + i] = src[i];
+	}
+	dest[m + i] = '\0';
+	return (dest);
 }
