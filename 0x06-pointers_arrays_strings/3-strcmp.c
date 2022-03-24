@@ -2,9 +2,9 @@
 
 /**
  * _strcmp - compare
- * @s1 : pointerto char params
- * @s2 : pointer to char params
- * Return: *dest
+ * @s1: char pointer
+ * @s2: char pointer
+ * Return: return dest
  */
 
 int _strcmp(char *s1, char *s2)

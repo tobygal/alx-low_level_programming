@@ -2,9 +2,9 @@
 
 /**
  * reverse_array - reverse
- * @a : pointer to int params
- * @n : pointer to int params
- * Return: no
+ * @a: int pointer
+ * @n: int pointer
+ * Return: return void
  */
 
 void reverse_array(int *a, int n)
