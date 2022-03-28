@@ -10,7 +10,7 @@
 char *_strchr(char *s, char c)
 {
 	int j;
-	char str[100] = "";
+	char str[] = "";
 
 	j = 0;
 
