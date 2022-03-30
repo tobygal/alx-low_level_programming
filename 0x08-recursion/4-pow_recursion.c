@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _pow_recursion -  a function that returns the value of x raised to the power of y
+ * _pow_recursion -  function returns the value of x raised to the power of y
  * @x: an int to be manipulated
  * @y: the power
  * Return: an int
