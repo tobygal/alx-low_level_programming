@@ -9,4 +9,29 @@
 
 int _sqrt_recursion(int n)
 {
-	if (
+	return (_sqrt(n, 1));
+}
+
+/**
+ * _sqrt - check the square to confirm squareroot
+ * @n: the squared number
+ * @i: possible squareroots
+ * Return: squareroot
+ */
+
+int _sqrt(int n, int i)
+{
+	if (n < 0)
+	{
+		return (-1);
+	}
+	if ((i * i) > n)
+	{
+		return (-1);
+	}
+	if (i * i == n)
+	{
+		return (i);
+	}
+	return (_sqrt(n, i + 1));
+}
