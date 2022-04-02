@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * change: function to find minimum change count
+ * change - function to find minimum change count
  * @amount: integer to be changed to cent
  * Return: return 1
  */
