@@ -43,7 +43,7 @@ char *str_concat(char *s1, char *s2)
 	else
 		b = _strlen(s2);
 
-	conc = malloc(l1 + l2 + 1);
+	conc = malloc(a + b + 1);
 	if (!conc)
 		return (0);
 
