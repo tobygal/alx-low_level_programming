@@ -2,51 +2,94 @@
 #include <stdio.h>
 
 /**
- * print_all - prints anything.
- * @format: a list of types of arguments passed to the function.
- *
- * Return: no return.
+ * print_i - prints an integer
+ * @list: holds the variable to be printed
+ * @sep: a string
+ * Return: returns nothing
  */
+
+void print_i(va_list list, char *sep)
+{
+	printf("%s%d", sep, va_arg(list, int));
+}
+
+/**
+ * print_c - prints a char value
+ * @list: holds the variable to be printed
+ * @sep: a string
+ * Return: returns nothing
+ */
+
+void print_c(va_list list, char *sep)
+{
+	printf("%s%c", sep, va_arg(list, int));
+}
+
+/**
+ * print_f - prints a float
+ * @list: holds the variable to be printed
+ * @sep: a string
+ * Return: returns nothing
+ */
+
+void print_f(va_list list, char *sep)
+{
+	printf("%s%f", sep, va_arg(list, double));
+}
+
+/**
+ * print_s - prints a string
+ * @list: holds the variable to be printed
+ * @sep: a string
+ * Return: returns nothing
+ */
+
+void print_s(va_list list, char *sep)
+{
+	char *s;
+
+	s = va_arg(list, char *);
+	if (s == NULL)
+		s = "(nil)";
+	printf("%s%s", sep, s);
+}
+
+/**
+ * print_all - prints all datatypes
+ * @format: format ti be used
+ * Return: returns nothing
+ */
+
 void print_all(const char * const format, ...)
 {
-	va_list valist;
-	unsigned int i = 0, j, c = 0;
-	char *str;
-	const char t_arg[] = "cifs";
+	va_list args;
+	int i, j;
+	char *separator;
+	type_dt typ[] = {
+		{"i", print_i},
+		{"c", print_c},
+		{"f", print_f},
+		{"s", print_s},
+		{NULL, NULL}
+	};
 
-	va_start(valist, format);
-	while (format && format[i])
+	va_start(args, format);
+	i = 0;
+	separator = "";
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
-		while (t_arg[j])
+		while (j < 4)
 		{
-			if (format[i] == t_arg[j] && c)
+			if (format[i] == *(typ[j]).form)
 			{
-				printf(", ");
-				break;
-			} j++;
-		}
-		switch (format[i])
-		{
-		case 'c':
-			printf("%c", va_arg(valist, int)), c = 1;
-			break;
-		case 'i':
-			printf("%d", va_arg(valist, int)), c = 1;
-			break;
-		case 'f':
-			printf("%f", va_arg(valist, double)), c = 1;
-			break;
-		case 's':
-			str = va_arg(valist, char *), c = 1;
-			if (!str)
-			{
-				printf("(nil)");
-				break;
+				typ[j].ptr(args, separator);
+				separator = ", ";
 			}
-			printf("%s", str);
-			break;
-		} i++;
+			j++;
+		}
+		i++;
 	}
-	printf("\n"), va_end(valist);
+	printf("\n");
+	va_end(args);
 }
