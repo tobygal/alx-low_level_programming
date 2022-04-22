@@ -2,7 +2,7 @@
 
 /**
  * add_node - adds a ne node at the beginning of a list
- * @head - the linked list
+ * @head: the linked list
  * @str: the str to be inserted
  * Return: address of the new element
  */
