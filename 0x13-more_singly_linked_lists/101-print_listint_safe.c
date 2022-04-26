@@ -1,14 +1,13 @@
 #include "lists.h"
 
 /**
- * _allo - reallocates memory for array of pointers
- * to a linked list
+ * _a - reallocates memory for array of pointers to linked list
  * @prev: the old list
  * @size: size of the new list
- * @current: new node to add to the list
+ * @cur: new node to add to the list
+ * Return: address of the first node in new list
  */
-
-const listint_t **_allo(const listint_t **prev, size_t size, const listint_t *current)
+const listint_t **_a(const listint_t **prev, size_t size, const listint_t *cur)
 {
 	const listint_t **new;
 	size_t count;
@@ -21,7 +20,7 @@ const listint_t **_allo(const listint_t **prev, size_t size, const listint_t *cu
 	}
 	for (count = 0; count < size - 1; count++)
 		new[count] = prev[count];
-	new[count] = current;
+	new[count] = cur;
 	free(prev);
 	return (new);
 }
@@ -31,7 +30,6 @@ const listint_t **_allo(const listint_t **prev, size_t size, const listint_t *cu
  * @head: the linked list
  * Return: returns the number of nodes
  */
-
 size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t **newnode = NULL;
@@ -49,7 +47,7 @@ size_t print_listint_safe(const listint_t *head)
 			}
 		}
 		num++;
-		newnode = _allo(newnode, num, head);
+		newnode = _a(newnode, num, head);
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
 	}
