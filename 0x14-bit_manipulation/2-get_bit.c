@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * get_bit - finds the value of a bit at a given index.
+ * get_bit - returns the value of a bit at a given position.
  * @n: number to check bits in
- * @index: point at which to check bit
+ * @index: position at which to check bit
  *
- * Return: returns the value of the bit, or -1 if there is an error
+ * Return: value of the bit, or -1 if failure
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
