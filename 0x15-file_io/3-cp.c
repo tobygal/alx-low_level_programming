@@ -20,10 +20,7 @@ int main(int argc, char *argv[])
 	}
 	fdfr = open(argv[1], O_RDONLY);
 	if (fdfr == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
 	fdto = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	/*status = read(fdfr, buf, MAXSIZE);*/
 	while ((status = read(fdfr, buf, MAXSIZE)) > 0)
@@ -34,7 +31,7 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	if (status < 0)
+	if (status == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
