@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 	fdfr = open(argv[1], O_RDONLY);
 	/* check if the file doesn't exist */
 	if (fdfr == -1)
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
+		dprintf(1, "Error: Can't read from file %s\n", argv[1]), exit(98);
 	/* create and write to a file */
 	fdto = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	/* copy the text in fdfr to fdto */
