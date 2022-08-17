@@ -8,5 +8,5 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
 
-%.o: %.c
+$(OBJ): $(SRC)
 	$(CC) -c $(SRC)
