@@ -1,6 +1,6 @@
 CC=gcc
-SRC=main.c school.c
-OBJ=$(SRC:.c=.o)
+SRC=$(foreach D, ., $(wildcard $(D)/*.c))
+OBJ=$(patsubst %.c,%.o,$(SRC))
 NAME=school
 
 all: $(NAME)
