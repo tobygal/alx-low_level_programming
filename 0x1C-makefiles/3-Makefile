@@ -9,11 +9,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-.c.o:
-	$(CC) -c -o $@ $<
-
 clean: 
-	$(RM) *.~ $(NAME)
+	$(RM) *.swp $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
