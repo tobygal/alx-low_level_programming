@@ -1,0 +1,12 @@
+CC=gcc
+SRC=$(foreach D, ., $(wildcard $(D)/*.c))
+OBJ=$(patsubst %.c,%.o,$(SRC))
+NAME=school
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) -c $(SRC)

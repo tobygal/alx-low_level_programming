@@ -1,0 +1,10 @@
+CC=gcc
+SRC=main.c school.c
+
+all: school
+
+school: main.o school.o
+	$(CC) -o school $(SRC)
+
+%.o: %.c
+	$(CC) -c $^
